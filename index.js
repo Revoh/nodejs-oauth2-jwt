@@ -37,12 +37,9 @@ app.post('/register_client', userHandler.registeringClient);
 // request token
 app.post('/token', authHandler);
 
-// validate token
-app.post('/validate', authHandler);
-
 //protected resource
 
-app.get('/profile_test', middleware.verifyToken, userHandler.getProfileTest);
+app.get('/validate_token', middleware.verifyToken, userHandler.getProfileTest);
 
 app.get('/client_test', middleware.verifyToken, userHandler.getClientTest)
 
